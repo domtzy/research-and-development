@@ -1,1 +1,2 @@
-https://domtzy.github.io/ResearchAndDevelopment_DayTrading_Guide/
+https://domtzy.github.io/research_and-development/dayTrading/
+
