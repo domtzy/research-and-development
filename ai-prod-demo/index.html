@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIBoost — Top AI Tools 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fdf8f0;
+    --surface: #ffffff;
+    --surface2: #f5ede0;
+    --border: rgba(0,0,0,0.08);
+    --text: #1a1208;
+    --muted: #251808;
+    --ink: #2a1f0e;
+
+    --tomato: #e8442a;
+    --tomato-light: #fde8e4;
+    --sky: #1a7fc1;
+    --sky-light: #dceef8;
+    --mint: #1a9e72;
+    --mint-light: #d4f0e5;
+    --grape: #7c3aed;
+    --grape-light: #ede9ff;
+    --honey: #d97706;
+    --honey-light: #fef3c7;
+    --rose: #db2777;
+    --rose-light: #fce7f3;
+    --teal: #0891b2;
+    --teal-light: #cff0fa;
+    --orange: #ea580c;
+    --orange-light: #ffedd5;
+    --slate: #475569;
+    --slate-light: #e2e8f0;
+
+    --free-bg: #dcfce7;
+    --free-border: #16a34a;
+    --free-text: #15803d;
+    --free-partial-bg: #fef9c3;
+    --free-partial-border: #ca8a04;
+    --free-partial-text: #a16207;
+
+    --privacy-bg: #fff7ed;
+    --privacy-border: #ea580c;
+    --privacy-text: #9a3412;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(232,68,42,0.04) 0%, transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(124,58,237,0.04) 0%, transparent 40%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Ccircle cx='30' cy='30' r='0.6' fill='%23c4a882' opacity='0.3'/%3E%3C/svg%3E");
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.65;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .page { display: none; min-height: 100vh; }
+  .page.active { display: block; }
+
+  /* NAV */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 40px;
+    background: rgba(253,248,240,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid var(--ink);
+  }
+  .nav-logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 900; font-size: 24px;
+    letter-spacing: -0.5px;
+    color: var(--ink);
+  }
+  .nav-logo em { font-style: italic; color: var(--tomato); }
+  .nav-tag {
+    font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--muted);
+    border: 1.5px solid var(--border);
+    border-radius: 4px; padding: 4px 10px;
+    background: var(--surface);
+  }
+
+  /* HERO */
+  .hero {
+    padding: 80px 40px 50px;
+    max-width: 900px; margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 11px; letter-spacing: 2px; font-weight: 500; text-transform: uppercase;
+    color: var(--tomato);
+    background: var(--tomato-light);
+    border: 1.5px solid var(--tomato);
+    border-radius: 4px; padding: 5px 14px; margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(40px, 7vw, 78px);
+    font-weight: 900; line-height: 1.0;
+    letter-spacing: -2px; margin-bottom: 24px;
+    color: var(--ink);
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--tomato);
+    position: relative;
+    display: inline-block;
+  }
+  .hero h1 em::after {
+    content: '';
+    position: absolute; bottom: 6px; left: 0; right: 0; height: 6px;
+    background: var(--honey);
+    border-radius: 2px;
+    z-index: -1;
+    transform: rotate(-0.5deg);
+  }
+  .hero p {
+    font-size: 17px; color: var(--muted); max-width: 480px;
+    margin: 0 auto 36px; font-weight: 600; line-height: 1.75;
+  }
+
+  .hero-why {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    margin-bottom: 40px;
+  }
+  .why-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 14px; border-radius: 100px;
+    background: var(--surface); border: 1.5px solid var(--ink);
+    font-size: 12px; font-weight: 500; color: var(--ink);
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+  .why-chip .why-icon { font-size: 14px; }
+
+  .privacy-banner {
+    margin: 0 40px 32px;
+    max-width: 1120px;
+    margin-left: auto; margin-right: auto;
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 16px 20px;
+    background: var(--privacy-bg);
+    border: 2px solid var(--privacy-border);
+    border-radius: 12px;
+    box-shadow: 3px 3px 0 var(--privacy-border);
+  }
+  .privacy-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+  .privacy-title {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+    text-transform: uppercase; color: var(--privacy-text); margin-bottom: 4px;
+  }
+  .privacy-body { font-size: 13px; color: var(--privacy-text); line-height: 1.6; }
+
+  .hero-deco {
+    position: absolute; pointer-events: none; z-index: 0;
+    font-family: 'Fraunces', serif; font-style: italic;
+    color: rgba(0,0,0,0.04); font-size: 120px; font-weight: 900;
+    user-select: none;
+  }
+  .hero-deco.left  { left: -20px; top: 40px; transform: rotate(-8deg); }
+  .hero-deco.right { right: -10px; top: 60px; transform: rotate(6deg); }
+
+  /* FILTER BAR */
+  .filter-bar {
+    display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 32px; padding: 0 40px;
+  }
+  .filter-btn {
+    padding: 8px 18px; border-radius: 100px; font-size: 13px; font-weight: 500;
+    border: 1.5px solid var(--border);
+    background: var(--surface); color: var(--muted);
+    cursor: pointer; transition: all 0.18s;
+    font-family: 'DM Sans', sans-serif;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.06);
+  }
+  .filter-btn:hover { border-color: var(--ink); color: var(--ink); transform: translateY(-1px); box-shadow: 3px 3px 0 rgba(0,0,0,0.10); }
+  .filter-btn.active {
+    background: var(--ink); border-color: var(--ink); color: #fff;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+  }
+
+  .audience-bar {
+    display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 48px; padding: 0 40px;
+  }
+  .audience-label {
+    font-size: 11px; letter-spacing: 1px; font-weight: 600;
+    text-transform: uppercase; color: var(--muted);
+    padding: 8px 0; align-self: center; margin-right: 4px;
+  }
+  .audience-btn {
+    padding: 7px 16px; border-radius: 100px; font-size: 12px; font-weight: 500;
+    border: 1.5px dashed var(--border);
+    background: transparent; color: var(--muted);
+    cursor: pointer; transition: all 0.18s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .audience-btn:hover { border-color: var(--sky); color: var(--sky); }
+  .audience-btn.active {
+    background: var(--sky-light); border-color: var(--sky);
+    border-style: solid; color: var(--sky);
+  }
+
+  /* FREE TIER BADGE */
+  .free-badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.3px;
+    padding: 3px 10px; border-radius: 100px;
+    border: 1.5px solid;
+    white-space: nowrap;
+  }
+  .free-badge.full {
+    background: var(--free-bg);
+    border-color: var(--free-border);
+    color: var(--free-text);
+  }
+  .free-badge.partial {
+    background: var(--free-partial-bg);
+    border-color: var(--free-partial-border);
+    color: var(--free-partial-text);
+  }
+  .free-badge::before {
+    content: '✦';
+    font-size: 8px;
+  }
+
+  .card-free-row {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 10px; margin-top: 4px;
+  }
+
+  .card-audience-tag {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.4px;
+    text-transform: uppercase; color: var(--sky);
+    background: var(--sky-light); border: 1px solid var(--sky);
+    border-radius: 4px; padding: 2px 7px; margin-bottom: 8px;
+  }
+
+  /* TOOLS GRID */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 24px; padding: 0 40px 100px; max-width: 1200px; margin: 0 auto;
+  }
+
+  .tool-card {
+    background: var(--surface);
+    border: 2px solid var(--ink);
+    border-radius: 16px; padding: 28px 26px;
+    cursor: pointer; position: relative; overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex; flex-direction: column;
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+  .tool-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .tool-card:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+
+  .tool-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+    background: var(--card-accent, var(--tomato));
+    border-radius: 14px 14px 0 0;
+  }
+
+  .card-number {
+    font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px; margin-top: 8px; display: block;
+  }
+  .card-icon {
+    width: 52px; height: 52px; border-radius: 12px; margin-bottom: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+    background: var(--card-icon-bg, #fde8e4);
+    border: 2px solid var(--card-accent, var(--tomato));
+  }
+  .card-title {
+    font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700;
+    margin-bottom: 3px; letter-spacing: -0.3px; color: var(--ink);
+  }
+  .card-tagline {
+    font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;
+    color: var(--card-accent, var(--tomato));
+    margin-bottom: 14px;
+  }
+  .card-desc {
+    font-size: 13.5px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; font-weight: 600;
+  }
+
+  .card-impact {
+    display: flex; align-items: flex-start; gap: 8px;
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    border-radius: 8px; padding: 10px 12px;
+    margin-bottom: 16px;
+    font-size: 12.5px; color: var(--muted); line-height: 1.5; font-weight: 600;
+  }
+  .card-impact-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+  .card-impact strong { color: var(--ink); font-weight: 600; display: block; font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 2px; }
+
+  .card-tags {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px;
+  }
+  .card-tag {
+    font-size: 11px; padding: 4px 10px; border-radius: 100px;
+    background: var(--card-icon-bg, #fde8e4);
+    color: var(--card-accent, var(--tomato));
+    border: 1px solid var(--card-accent, var(--tomato));
+    font-weight: 500;
+  }
+  .card-btn {
+    width: 100%; padding: 11px;
+    background: var(--card-accent, var(--tomato));
+    border: 2px solid var(--card-accent, var(--tomato));
+    color: #fff;
+    border-radius: 8px; font-size: 13px; font-weight: 500;
+    font-family: 'DM Sans', sans-serif; cursor: pointer;
+    transition: all 0.15s;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    margin-top: auto;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.15);
+  }
+  .card-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.18);
+  }
+
+  /* DETAIL */
+  #detail-page .nav { display: flex; align-items: center; gap: 16px; }
+  .back-btn {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--surface); border: 1.5px solid var(--ink);
+    color: var(--ink); padding: 8px 16px; border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+    cursor: pointer; transition: all 0.15s;
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+  .back-btn:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--ink); }
+
+  .detail-hero {
+    padding: 60px 40px 40px; max-width: 900px; margin: 0 auto;
+  }
+  .detail-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; letter-spacing: 1.5px; font-weight: 600; text-transform: uppercase;
+    color: var(--detail-accent, var(--tomato));
+    background: var(--detail-accent-light, var(--tomato-light));
+    border: 1.5px solid var(--detail-accent, var(--tomato));
+    border-radius: 4px; padding: 5px 14px; margin-bottom: 20px;
+  }
+  .detail-title {
+    font-family: 'Fraunces', serif; font-size: clamp(30px, 5vw, 52px);
+    font-weight: 900; letter-spacing: -1.5px; margin-bottom: 8px; color: var(--ink);
+  }
+  .detail-tagline {
+    font-size: 15px; font-weight: 400; color: var(--muted); margin-bottom: 20px;
+    text-decoration: underline; text-underline-offset: 3px;
+  }
+  .detail-desc {
+    font-size: 16px; color: var(--muted); max-width: 620px; margin-bottom: 20px;
+    line-height: 1.8; font-weight: 600;
+  }
+  .detail-free-row {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 24px;
+  }
+  .detail-free-label {
+    font-size: 12px; color: var(--muted); font-weight: 400;
+  }
+
+  .detail-impact-box {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: var(--surface2);
+    border: 2px solid var(--ink);
+    border-radius: 12px; padding: 16px 20px;
+    margin-bottom: 28px;
+    max-width: 620px;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+  .detail-impact-icon { font-size: 22px; flex-shrink: 0; }
+  .detail-impact-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 4px;
+  }
+  .detail-impact-text { font-size: 14px; color: var(--ink); line-height: 1.6; font-weight: 600; }
+
+  .detail-privacy-note {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: var(--privacy-bg);
+    border: 1.5px solid var(--privacy-border);
+    border-radius: 10px; padding: 12px 16px;
+    margin-bottom: 32px; max-width: 620px;
+    font-size: 12.5px; color: var(--privacy-text); line-height: 1.6; font-weight: 600;
+  }
+  .detail-privacy-note .priv-icon { flex-shrink: 0; font-size: 16px; }
+
+  .detail-highlights {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 48px;
+  }
+  .highlight-chip {
+    display: flex; align-items: center; gap: 6px;
+    padding: 7px 14px; border-radius: 100px;
+    background: var(--surface); border: 1.5px solid var(--ink);
+    font-size: 12px; font-weight: 500; color: var(--ink);
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+  .highlight-chip::before {
+    content: '✦'; font-size: 9px;
+    color: var(--detail-accent, var(--tomato));
+  }
+
+  .steps-section {
+    padding: 0 40px 80px; max-width: 1200px; margin: 0 auto;
+  }
+  .section-header {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 32px;
+  }
+  .section-label {
+    font-family: 'Fraunces', serif; font-size: 14px; font-weight: 700; font-style: italic;
+    color: var(--ink); white-space: nowrap;
+  }
+  .section-line {
+    flex: 1; height: 2px; background: var(--ink);
+    border-radius: 2px;
+  }
+
+  .screenshot-grid {
+    display: grid; gap: 20px; margin-bottom: 48px;
+  }
+  .screenshot-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .screenshot-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+  @media (max-width: 900px) {
+    .screenshot-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
+    .screenshot-grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .screenshot-grid { grid-template-columns: 1fr !important; }
+    .tools-grid { padding: 0 20px 80px; }
+    .hero, .steps-section, .detail-hero { padding-left: 20px; padding-right: 20px; }
+    .nav { padding: 16px 20px; }
+    .filter-bar, .audience-bar { padding: 0 20px; }
+    .privacy-banner { margin: 0 20px 28px; }
+  }
+
+  .screenshot-thumb {
+    cursor: pointer; border-radius: 12px; overflow: hidden;
+    border: 2px solid var(--ink); background: var(--surface);
+    transition: transform 0.18s, box-shadow 0.18s;
+    display: flex; flex-direction: column;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+  .screenshot-thumb:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--ink);
+  }
+
+  .thumb-placeholder {
+    display: block; width: 100%; height: 180px;
+    background: var(--surface2);
+    border-bottom: 2px solid var(--ink);
+    position: relative; overflow: hidden; flex-shrink: 0;
+  }
+  .thumb-placeholder.no-img {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 10px;
+  }
+
+  .thumb-img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top;
+    display: block; position: absolute; inset: 0;
+  }
+  .thumb-img.hidden { display: none; }
+
+  .thumb-placeholder-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: rgba(0,0,0,0.05);
+    border: 1.5px dashed rgba(0,0,0,0.2);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; z-index: 1;
+  }
+  .thumb-placeholder-icon::after {
+    content: '⊞'; font-size: 16px; color: rgba(0,0,0,0.2);
+  }
+  .thumb-placeholder-hint {
+    font-size: 10px; color: rgba(0,0,0,0.2);
+    letter-spacing: 0.5px; position: relative; z-index: 1;
+  }
+
+  .thumb-label {
+    padding: 10px 14px;
+    font-size: 12.5px; color: var(--muted); line-height: 1.5; font-weight: 600;
+    min-height: 56px; flex: 1; background: var(--surface);
+  }
+  .thumb-label strong {
+    display: block; font-size: 10px; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--detail-accent, var(--tomato));
+    margin-bottom: 3px; font-weight: 600;
+  }
+
+  .limitations-section {
+    margin-bottom: 48px;
+    width: 100%;
+  }
+  .limitations-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px;
+  }
+  @media (max-width: 560px) { .limitations-grid { grid-template-columns: 1fr; } }
+  .limit-card {
+    border-radius: 10px; padding: 14px 16px;
+    border: 1.5px solid var(--border);
+    background: var(--surface);
+  }
+  .limit-card.do { border-color: var(--mint); background: var(--mint-light); }
+  .limit-card.dont { border-color: var(--tomato); background: var(--tomato-light); }
+  .limit-card-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .limit-card.do .limit-card-label { color: var(--mint); }
+  .limit-card.dont .limit-card-label { color: var(--tomato); }
+  .limit-card ul { padding-left: 16px; }
+  .limit-card ul li { font-size: 12.5px; color: var(--muted); margin-bottom: 4px; line-height: 1.5; font-weight: 600; }
+
+  /* ─── VIDEO PLACEHOLDER ─────────────────────────────────────────────────── */
+  .video-placeholder-wrap {
+    position: relative; width: 100%; height: 200px;
+    background: var(--ink);
+    border-bottom: 2px solid var(--ink);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 10px;
+    overflow: hidden; flex-shrink: 0;
+    cursor: pointer;
+  }
+  .video-placeholder-wrap::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,0.02) 0px,
+        rgba(255,255,255,0.02) 1px,
+        transparent 1px,
+        transparent 12px
+      );
+  }
+  .video-placeholder-wrap::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.08) 0%, transparent 70%);
+  }
+  .video-play-btn {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    border: 2px solid rgba(255,255,255,0.35);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; color: #fff;
+    position: relative; z-index: 2;
+    transition: all 0.2s;
+    padding-left: 3px;
+  }
+  .screenshot-thumb:hover .video-play-btn {
+    background: var(--detail-accent, var(--tomato));
+    border-color: var(--detail-accent, var(--tomato));
+    transform: scale(1.1);
+  }
+  .video-placeholder-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: rgba(255,255,255,0.4);
+    position: relative; z-index: 2;
+  }
+  .video-badge {
+    position: absolute; top: 10px; right: 10px; z-index: 3;
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    background: var(--detail-accent, var(--tomato)); color: #fff;
+    border-radius: 4px; padding: 3px 8px;
+  }
+  .video-badge-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #fff; opacity: 0.85;
+    animation: pulse-dot 1.6s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 0.85; transform: scale(1); }
+    50%       { opacity: 0.3;  transform: scale(0.75); }
+  }
+  .video-duration-hint {
+    font-size: 10px; color: rgba(255,255,255,0.28);
+    letter-spacing: 0.5px; position: relative; z-index: 2;
+  }
+  /* ─── END VIDEO PLACEHOLDER ─────────────────────────────────────────────── */
+
+  /* ─── YOUTUBE EMBED SECTION ─────────────────────────────────────────────── */
+  .yt-section { margin-bottom: 48px; }
+  .yt-embed-wrap {
+    position: relative;
+    border: 2px solid var(--ink);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 4px 4px 0 var(--ink);
+    background: #000;
+  }
+  .yt-embed-wrap iframe {
+    display: block; width: 100%; height: 480px; border: none;
+  }
+  .yt-label {
+    display: flex; align-items: center; gap: 10px; margin-top: 12px;
+  }
+  .yt-label-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #ff0000; color: #fff;
+    border-radius: 6px; padding: 4px 10px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+    text-transform: uppercase; gap: 5px; flex-shrink: 0;
+  }
+  .yt-label-text {
+    font-size: 12.5px; color: var(--muted); font-weight: 600; line-height: 1.4;
+  }
+  @media (max-width: 768px) { .yt-embed-wrap iframe { height: 240px; } }
+  /* ─── YOUTUBE GRID TILE ─────────────────────────────────────────────────── */
+  .yt-grid-tile { cursor: default; }
+  .yt-grid-embed-wrap {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #000;
+    border-bottom: 2px solid var(--ink);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .yt-grid-embed-wrap iframe {
+    width: 100%; height: 100%; border: none; display: block;
+  }
+  /* ─── VIDEO GRID TILE (poster + play overlay) ───────────────────────────── */
+  .video-grid-tile { cursor: pointer; }
+  .video-grid-poster-wrap {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #000;
+    border-bottom: 2px solid var(--ink);
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .video-poster-overlay {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.35);
+    transition: background 0.2s;
+  }
+  .video-grid-tile:hover .video-poster-overlay {
+    background: rgba(0,0,0,0.5);
+  }
+  .video-poster-play-btn {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: rgba(255,255,255,0.92);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; color: #111;
+    padding-left: 4px;
+    transition: transform 0.18s, background 0.18s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+  .video-grid-tile:hover .video-poster-play-btn {
+    transform: scale(1.1);
+    background: #fff;
+  }
+  /* ─── END VIDEO GRID TILE ────────────────────────────────────────────────── */
+
+  /* ─── END YOUTUBE GRID TILE ──────────────────────────────────────────────── */
+
+  /* ─── END YOUTUBE EMBED SECTION ─────────────────────────────────────────── */
+
+  /* MODAL */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 999;
+    background: rgba(26,18,8,0.85); backdrop-filter: blur(6px);
+    align-items: center; justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: var(--surface); border: 2px solid var(--ink);
+    border-radius: 16px; padding: 28px; max-width: 1000px; width: 90%;
+    position: relative; box-shadow: 8px 8px 0 var(--ink);
+  }
+  .modal-close {
+    position: absolute; top: 14px; right: 14px;
+    background: var(--surface2); border: 1.5px solid var(--ink);
+    color: var(--ink); width: 32px; height: 32px;
+    border-radius: 50%; cursor: pointer; font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s; z-index: 2;
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+  .modal-close:hover { background: var(--ink); color: #fff; }
+  .modal-img-wrap {
+    background: var(--surface2); border-radius: 10px; overflow: hidden;
+    margin-bottom: 16px; border: 1.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center; min-height: 500px;
+  }
+  .modal-img-wrap img { width: 100%; height: auto; display: block; max-height: 75vh; object-fit: contain; }
+  .modal-img-placeholder {
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: var(--muted); font-size: 13px; padding: 40px 20px; text-align: center;
+  }
+  .modal-img-placeholder::before { content: '🖼'; font-size: 32px; opacity: 0.25; }
+  .modal-footer { display: flex; align-items: center; gap: 12px; }
+  .modal-info { flex: 1; min-width: 0; }
+  .modal-label { font-size: 14px; color: var(--ink); font-weight: 500; line-height: 1.5; }
+  .modal-sublabel { font-size: 11px; color: var(--muted); margin-top: 2px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .modal-nav { display: flex; gap: 8px; flex-shrink: 0; align-items: center; }
+  .modal-nav-btn {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--surface); border: 1.5px solid var(--ink);
+    color: var(--ink); cursor: pointer; font-size: 16px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s; user-select: none;
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+  .modal-nav-btn:hover:not(:disabled) { background: var(--ink); color: #fff; transform: translate(-1px, -1px); box-shadow: 3px 3px 0 rgba(0,0,0,0.3); }
+  .modal-nav-btn:disabled { opacity: 0.2; cursor: default; box-shadow: none; }
+  .modal-counter {
+    font-size: 11px; font-weight: 600; letter-spacing: 1px; color: var(--muted);
+    white-space: nowrap; background: var(--surface2); border: 1.5px solid var(--border);
+    border-radius: 100px; padding: 4px 12px; font-family: 'DM Sans', sans-serif;
+  }
+
+  .scroll-up {
+    position: fixed; bottom: 28px; right: 28px; z-index: 200;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--ink); border: 2px solid var(--ink);
+    color: #fff; cursor: pointer; font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s; opacity: 0; pointer-events: none;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+  }
+  .scroll-up.visible { opacity: 1; pointer-events: auto; }
+  .scroll-up:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 rgba(0,0,0,0.3); }
+
+  .footer {
+    padding: 40px; border-top: 2px solid var(--ink);
+    text-align: center; color: var(--muted); font-size: 12px;
+    letter-spacing: 1px; font-weight: 400; text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .tool-card { animation: fadeUp 0.45s ease both; }
+  .tool-card:nth-child(1)  { animation-delay: 0.04s; }
+  .tool-card:nth-child(2)  { animation-delay: 0.08s; }
+  .tool-card:nth-child(3)  { animation-delay: 0.12s; }
+  .tool-card:nth-child(4)  { animation-delay: 0.16s; }
+  .tool-card:nth-child(5)  { animation-delay: 0.20s; }
+  .tool-card:nth-child(6)  { animation-delay: 0.24s; }
+  .tool-card:nth-child(7)  { animation-delay: 0.28s; }
+  .tool-card:nth-child(8)  { animation-delay: 0.32s; }
+  .tool-card:nth-child(9)  { animation-delay: 0.36s; }
+  .tool-card:nth-child(10) { animation-delay: 0.40s; }
+  .tool-card:nth-child(11) { animation-delay: 0.44s; }
+
+  /* Dimmed state for non-matching audience cards */
+  .tool-card.card-dimmed {
+    opacity: 0.32;
+    filter: grayscale(40%);
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.08);
+    transform: none !important;
+    pointer-events: auto;
+  }
+  .tool-card.card-dimmed:hover {
+    opacity: 0.55;
+    filter: grayscale(20%);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.12);
+    transform: translate(-1px,-1px) !important;
+  }
+
+  /* Audience context label row */
+  .audience-context-row {
+    text-align: center;
+    padding: 0 40px;
+    margin-bottom: 20px;
+    margin-top: -12px;
+  }
+  .audience-context-label {
+    font-size: 12px; color: var(--muted); font-weight: 400;
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    border-radius: 100px;
+    display: inline-block;
+    padding: 5px 16px;
+    transition: all 0.3s;
+  }
+
+  /* Intern placeholder reminder banner */
+  .placeholder-reminder {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: #fffbeb;
+    border: 2px dashed #f59e0b;
+    border-radius: 12px; padding: 14px 18px;
+    margin-bottom: 28px;
+    font-size: 13px; color: #92400e; line-height: 1.6; font-weight: 600;
+  }
+  .placeholder-reminder-icon { font-size: 20px; flex-shrink: 0; }
+  .placeholder-reminder strong { display: block; font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 4px; color: #b45309; }
+
+  /* Step label badges — Trigger / Input / Execution / Output / Validate */
+  .step-phase-badge {
+    display: inline-block;
+    font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    padding: 2px 7px; border-radius: 3px;
+    margin-bottom: 2px;
+    background: var(--detail-accent, var(--tomato));
+    color: #fff;
+  }
+
+  /* Larger tap targets on mobile for Back and close buttons */
+  @media (max-width: 768px) {
+    .back-btn {
+      min-height: 44px; min-width: 44px;
+      padding: 10px 18px;
+    }
+    .modal-close {
+      width: 40px; height: 40px; font-size: 17px;
+      top: 10px; right: 10px;
+    }
+    .modal-nav-btn {
+      width: 44px; height: 44px; font-size: 18px;
+    }
+    .audience-context-row { padding: 0 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page active" id="main-page">
+  <nav class="nav">
+    <div class="nav-logo">AI<em>Boost</em></div>
+    <div class="nav-tag">2025 Edition</div>
+  </nav>
+
+  <section class="hero">
+    <span class="hero-eyebrow">11 AI Tools, Step by Step</span>
+    <h1>How much time did you <em>waste</em> on that last task?</h1>
+    <p>AI could've done it in 30 seconds. Here are the 11 tools actually worth using — one step at a time.</p>
+
+    <div class="hero-why">
+      <span class="why-chip"><span class="why-icon">⚡</span>Up and running in under 5 minutes</span>
+      <span class="why-chip"><span class="why-icon">✅</span>Used daily by real teams — not just hype</span>
+      <span class="why-chip"><span class="why-icon">💼</span>Efficiency wins across dev, design &amp; admin</span>
+      <span class="why-chip"><span class="why-icon">💸</span>Free or under $20/mo to get started</span>
+    </div>
+  </section>
+
+  <div class="audience-bar">
+    <span class="audience-label">Best for:</span>
+    <button class="audience-btn active" data-audience="all">Everyone</button>
+    <button class="audience-btn" data-audience="general">General Staff</button>
+    <button class="audience-btn" data-audience="creative">Marketing &amp; Creative</button>
+    <button class="audience-btn" data-audience="tech">Dev &amp; IT</button>
+  </div>
+
+  <div class="audience-context-row">
+    <p class="audience-context-label" id="audience-context-label">Showing all 11 tools — use the filters above to see what's most relevant to your role.</p>
+  </div>
+
+  <div class="tools-grid" id="tools-grid"></div>
+
+  <footer class="footer">AIBoost · 2025 Edition · 11 AI tools, made simple</footer>
+</div>
+
+<!-- DETAIL PAGE -->
+<div class="page" id="detail-page">
+  <nav class="nav">
+    <button class="back-btn" onclick="goBack()">← Back</button>
+    <div class="nav-logo" id="detail-nav-name">AI<em>Boost</em></div>
+    <div class="nav-tag" id="detail-nav-tag">GUIDE</div>
+  </nav>
+
+  <section class="detail-hero" id="detail-hero-content"></section>
+  <section class="steps-section" id="detail-steps"></section>
+
+  <footer class="footer">AIBoost · 2025 Edition</footer>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-img-wrap" id="modal-img-wrap">
+      <div class="modal-img-placeholder">No image uploaded yet</div>
+    </div>
+    <div class="modal-footer">
+      <div class="modal-info">
+        <div class="modal-label" id="modal-label"></div>
+        <div class="modal-sublabel" id="modal-sublabel"></div>
+      </div>
+      <div class="modal-nav">
+        <button class="modal-nav-btn" id="modal-prev" onclick="modalNav(-1)" title="Previous">&#8592;</button>
+        <span class="modal-counter" id="modal-counter">1 / 5</span>
+        <button class="modal-nav-btn" id="modal-next" onclick="modalNav(1)" title="Next">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="scroll-up" id="scroll-up-btn" onclick="scrollToTop()" title="Back to top">↑</button>
+
+<script>
+const VIDEO_URLS = {
+  'syllaby': 'https://res.cloudinary.com/dh16qrcvp/video/upload/syllaby-demo_kpzmlp.mp4',
+  'tripo': 'https://res.cloudinary.com/dh16qrcvp/video/upload/tripo-demo_fqqzhi.mp4',
+  'submagic': 'https://res.cloudinary.com/dh16qrcvp/video/upload/submagic-demo_wacuku.mp4',
+  'canva': 'https://res.cloudinary.com/dh16qrcvp/video/upload/canva-demo_drt2oc.mp4',
+  'suno': 'https://res.cloudinary.com/dh16qrcvp/video/upload/suno-demo_x5qxdn.mp4',
+  'reccloud': 'https://res.cloudinary.com/dh16qrcvp/video/upload/reccloud-demo_gywjgz.mp4',
+  'perplexity': 'https://res.cloudinary.com/dh16qrcvp/video/upload/perplexity-demo_sftm7g.mp4',
+  'claude': 'https://res.cloudinary.com/dh16qrcvp/video/upload/claude-demo_mk3vri.mp4',
+  'higgsfield': 'https://res.cloudinary.com/dh16qrcvp/video/upload/higgsfield-demo_krxb6u.mp4',
+  'elevenlabs': 'https://res.cloudinary.com/dh16qrcvp/video/upload/elevenlabs-demo_kmucwf.mp4',
+};
+
+const TOOLS = [
+  {
+    id: 'claude',
+    name: 'Claude.ai',
+    url: 'claude.ai',
+    tagline: 'Fix bugs with AI',
+    category: 'solve',
+    audience: ['general', 'tech'],
+    emoji: '🧠',
+    accent: '#e8442a',
+    accentLight: '#fde8e4',
+    desc: 'Claude is an AI by Anthropic that helps you write, code, and think. It\'s especially good at reading your code and explaining what\'s wrong in plain language.',
+    impact: 'Reduces time spent debugging by helping spot errors in seconds instead of hours — useful for both developers and non-technical staff writing scripts or formulas.',
+    highlights: ['Finds and explains bugs clearly', 'Helps with writing and ideas', 'Understands long documents'],
+    dos: ['Paste general or public code snippets', 'Use for writing drafts and summaries', 'Ask it to explain technical terms simply'],
+    donts: ['Paste proprietary or client code', 'Trust every answer without checking', 'Use it for real-time web data (no live search)'],
+    freeTier: { type: 'full', label: 'Free tier available', note: 'Free plan with daily message limits' },
+    privacyNote: 'Conversations may be used to improve the model. Avoid pasting confidential company data. Use the enterprise plan for private deployments.',
+    steps: [
+      { phase: 'Trigger',   label: "Your code isn't working — something feels off", img: 'images/claude1.png' },
+      { phase: 'Trigger',   label: "You've looked through the IDE but can't spot the bug", img: 'images/claude2.png' },
+      { phase: 'Input',     label: 'Copy the code and paste it into Claude.ai', img: 'images/claude3.png' },
+      { phase: 'Output',    label: 'Claude explains what\'s wrong and shows the fix', img: 'images/claude4.png' },
+      { phase: 'Validate',  label: 'Apply the changes — your code works now', img: 'images/claude5.png' },
+      { phase: 'Plans',     label: 'Claude plans and perks', img: 'images/claudeplans.png' },
+    ]
+  },
+  {
+    id: 'perplexity',
+    name: 'Perplexity.ai',
+    url: 'perplexity.ai',
+    tagline: 'Search that actually cites sources',
+    category: 'research',
+    audience: ['general', 'tech', 'creative'],
+    emoji: '🔍',
+    accent: '#1a7fc1',
+    accentLight: '#dceef8',
+    desc: 'Like Google, but smarter. Perplexity searches the web for you and writes a clear answer — with links to every source it used so you can check.',
+    impact: 'Cuts research time significantly — instead of opening 10 tabs, you get a sourced summary in one place. Great for keeping up with industry news or fact-checking quickly.',
+    highlights: ['Cites every source it uses', 'Searches the web in real time', 'Great for fact-checking'],
+    dos: ['Fact-check industry news and trends', 'Research competitors or market data', 'Click through to verify sources'],
+    donts: ['Treat summaries as 100% accurate without checking', 'Use for deep academic research without verification', 'Share AI summaries as official reports'],
+    freeTier: { type: 'full', label: 'Free credits available', note: 'Free plan with standard searches' },
+    privacyNote: 'Queries are sent to Perplexity servers. Avoid searching for confidential internal projects or sensitive employee information.',
+    steps: [
+      { phase: 'Input',     label: 'Open Perplexity and type your question naturally', img: 'images/perplexity1.png' },
+      { phase: 'Output',    label: 'Read the answer — all sources are listed on the side', img: 'images/perplexity2.png' },
+      { phase: 'Validate',  label: 'Click any source to read the original article', img: 'images/perplexity3.png' },
+      { phase: 'Validate',  label: 'Ask a follow-up to dig deeper into the topic', img: 'images/perplexity4.png' },
+      { phase: 'Plans',     label: 'Perplexity plans — Free vs Pro', img: 'images/perplexityplans1.png' },
+      { phase: 'Plans',     label: 'Perplexity plans — Pro features', img: 'images/perplexityplans2.png' },
+      { phase: 'Plans',     label: 'Perplexity plans — Enterprise', img: 'images/perplexityplans3.png' },
+    ]
+  },
+  {
+    id: 'syllaby',
+    name: 'Syllaby.io',
+    url: 'syllaby.io',
+    tagline: 'Make videos without being on camera',
+    category: 'create',
+    audience: ['creative'],
+    emoji: '🎬',
+    accent: '#7c3aed',
+    accentLight: '#ede9ff',
+    desc: 'Create full videos without ever showing your face. Syllaby writes the script, adds a voice, and puts the video together for you automatically.',
+    impact: 'Dramatically speeds up content production — a social video that would take a day to film and edit can be ready in under an hour with no camera required.',
+    highlights: ['No camera needed', 'AI writes the script for you', 'Ready-to-post in minutes'],
+    dos: ['Use for explainer or promotional videos', 'Review and edit the AI-generated script before publishing', 'Pair with your brand\'s tone and guidelines'],
+    donts: ['Publish without reviewing the script', 'Use AI voice for sensitive client communications', 'Assume the AI script is brand-compliant automatically'],
+    freeTier: { type: 'partial', label: 'Free trial only', note: '7-day free trial, then paid plans' },
+    privacyNote: 'Scripts and prompts you enter are processed by Syllaby. Do not include proprietary product details or internal project names.',
+    steps: [
+      { phase: 'Trigger',   label: 'Sign in to Syllaby and click Generate', img: 'images/syllaby1.png' },
+      { phase: 'Input',     label: 'Choose "Faceless" as your video type', img: 'images/syllaby2.png' },
+      { phase: 'Input',     label: 'Pick a style, generate a script, and tweak the settings', img: 'images/syllaby3.png' },
+      { phase: 'Input',     label: 'Scroll down to adjust more details if needed', img: 'images/syllaby4.png' },
+      { phase: 'Execution', label: 'Hit Generate when you\'re ready', img: 'images/syllaby5.png' },
+      { phase: 'Execution', label: 'Wait while the video is being built', img: 'images/syllaby6.png' },
+      { phase: 'Output',    label: 'Your video is ready to download or share', img: 'images/syllaby7.png' },
+      { phase: 'Plans',     label: 'Syllaby plans — overview', img: 'images/syllabyplans1.png' },
+      { phase: 'Plans',     label: 'Syllaby plans — pricing tiers', img: 'images/syllabyplans2.png' },
+    ]
+  },
+  {
+    id: 'tripo',
+    name: 'Tripo.ai',
+    url: 'tripo.ai',
+    tagline: 'Turn images into 3D models',
+    category: 'create',
+    audience: ['creative', 'tech'],
+    emoji: '🌐',
+    accent: '#d97706',
+    accentLight: '#fef3c7',
+    desc: 'Tripo turns a text prompt or an image into a fully rotatable 3D model. No 3D software skills needed — just describe what you want.',
+    impact: 'Replaces hours of manual 3D modeling for simple product mockups, prototypes, or visual assets — ideal for rapid iteration in design and product teams.',
+    highlights: ['Type a prompt, get a 3D model', 'Works from images too', 'Export and use anywhere'],
+    dos: ['Prototype product concepts quickly', 'Use for marketing visuals or mockups', 'Export and refine in professional 3D tools if needed'],
+    donts: ['Expect production-quality models straight away', 'Use client IP or copyrighted reference images without permission', 'Skip reviewing outputs before sharing externally'],
+    freeTier: { type: 'partial', label: 'Free credits on signup', note: 'Limited free credits, then pay-as-you-go' },
+    privacyNote: 'Images and prompts are uploaded to Tripo servers. Avoid uploading confidential product designs or unreleased IP.',
+    steps: [
+      { phase: 'Trigger',   label: 'Sign up and click Generate image', img: 'images/tripo1.png' },
+      { phase: 'Input',     label: 'Type a description and generate the image', img: 'images/tripo2.png' },
+      { phase: 'Execution', label: 'Hover over the image and click "High detail model"', img: 'images/tripo3.png' },
+      { phase: 'Execution', label: 'Click Generate model', img: 'images/tripo4.png' },
+      { phase: 'Execution', label: 'Wait while the 3D model is being created', img: 'images/tripo5.png' },
+      { phase: 'Output',    label: 'View from the back', img: 'images/tripo6.png' },
+      { phase: 'Output',    label: 'View from the side', img: 'images/tripo7.png' },
+      { phase: 'Validate',  label: 'Zoomed in close-up view', img: 'images/tripo8.png' },
+      { phase: 'Plans',     label: 'Tripo plans', img: 'images/tripoplans.png' },
+    ]
+  },
+  {
+    id: 'suno',
+    name: 'Suno.ai',
+    url: 'suno.ai',
+    tagline: 'Create original songs with AI',
+    category: 'music',
+    audience: ['creative'],
+    emoji: '🎵',
+    accent: '#db2777',
+    accentLight: '#fce7f3',
+    desc: 'Just type what you want to hear — Suno writes the lyrics, picks the instruments, and sings the whole song. Any genre, any mood, totally free to use.',
+    impact: 'Creates original background music or jingles for presentations, videos, and events in minutes — no music production budget needed.',
+    highlights: ['Full songs with real vocals', 'Any genre from a simple prompt', 'Free to use and share'],
+    dos: ['Generate original background music for internal videos', 'Experiment with different styles and genres', 'Check licensing terms before commercial use'],
+    donts: ['Use for commercial projects without reviewing Suno\'s commercial license', 'Replicate real artists\' styles without checking copyright', 'Assume outputs are cleared for all platforms'],
+    freeTier: { type: 'full', label: 'Free credits available', note: 'Free plan with 50 credits/day' },
+    privacyNote: 'Lyrics and prompts are sent to Suno servers. Review Suno\'s commercial use policy before publishing music externally.',
+    steps: [
+      { phase: 'Trigger',   label: 'Go to Suno.ai and sign in to your account', img: 'images/suno1.png' },
+      { phase: 'Input',     label: 'Type a prompt or hit the dice for a random idea, then click Create', img: 'images/suno2.png' },
+      { phase: 'Input',     label: 'Switch to Custom mode if you want to write your own lyrics', img: 'images/suno3.png' },
+      { phase: 'Plans',     label: 'Suno plans', img: 'images/sunoplans.png' },
+    ]
+  },
+  {
+    id: 'higgsfield',
+    name: 'Higgsfield',
+    url: 'higgsfield.ai',
+    tagline: 'Generate cinematic AI videos',
+    category: 'create',
+    audience: ['creative'],
+    emoji: '🎥',
+    accent: '#0891b2',
+    accentLight: '#cff0fa',
+    desc: 'Higgsfield makes high-quality AI videos and images from a text description. Great for visual content, social posts, or creative storytelling.',
+    impact: 'Cuts video production cost to near-zero for short social content — teams can produce visually polished clips for campaigns without a film crew.',
+    highlights: ['Cinematic quality videos', 'Also creates still images', 'Characters look consistent across scenes'],
+    dos: ['Use for social media and campaign concepts', 'Iterate quickly on visual ideas before full production', 'Use as a storyboarding tool'],
+    donts: ['Use real people\'s likenesses without consent', 'Publish AI video as genuine footage without disclosure', 'Treat as a replacement for professional video for high-stakes campaigns'],
+    freeTier: { type: 'partial', label: 'Free credits on signup', note: 'Limited free generations at sign-up' },
+    privacyNote: 'Prompts and reference images are sent to Higgsfield. Avoid uploading photos of real people without explicit consent.',
+    steps: [
+      { phase: 'Trigger',   label: 'Open Higgsfield, sign in, and click Create', img: 'images/higgsfield1.png' },
+      { phase: 'Input',     label: 'Type in your prompt describing the scene', img: 'images/higgsfield2.png' },
+      { phase: 'Execution', label: 'Wait while the video generates', img: 'images/higgsfield3.png' },
+      { phase: 'Validate',  label: 'Tweak or refine if you want a different result', img: 'images/higgsfield4.png' },
+      { phase: 'Plans',     label: 'Higgsfield plans — overview', img: 'images/higgsfieldplans.png' },
+      { phase: 'Plans',     label: 'Higgsfield plans — pricing tiers', img: 'images/higgsfieldplans1.png' },
+    ]
+  },
+  {
+    id: 'submagic',
+    name: 'Submagic.co',
+    url: 'submagic.co',
+    tagline: 'Auto-edit videos for social media',
+    category: 'create',
+    audience: ['creative'],
+    emoji: '✂️',
+    accent: '#1a9e72',
+    accentLight: '#d4f0e5',
+    desc: 'Upload a video or paste a YouTube link — Submagic finds the best clips, adds captions, and formats everything for TikTok or Reels automatically.',
+    impact: 'Turns a long video into multiple ready-to-post clips in minutes — saves hours of manual editing and captioning for social media teams.',
+    highlights: ['Auto-generates captions', 'Finds the best clips for you', 'Perfect for TikTok and Reels'],
+    dos: ['Repurpose long webinars or interviews into short clips', 'Use auto-captions to improve accessibility', 'Review clip selections before posting'],
+    donts: ['Upload videos containing confidential meetings or client names', 'Skip reviewing captions — AI transcription can make errors', 'Use on videos you don\'t own the rights to'],
+    freeTier: { type: 'partial', label: 'Free trial only', note: 'Limited free trial, then paid plans' },
+    privacyNote: 'Videos you upload are processed on Submagic servers. Never upload internal meeting recordings or videos containing private client information.',
+    steps: [
+      { phase: 'Trigger',   label: 'Go to Submagic and click Create project', img: 'images/submagic1.png' },
+      { phase: 'Trigger',   label: 'For this guide we\'ll use Magic clips', img: 'images/submagic2.png' },
+      { phase: 'Input',     label: 'You can upload a video or grab one from YouTube', img: 'images/submagic3.png' },
+      { phase: 'Input',     label: 'We\'ll use YouTube for this example', img: 'images/submagic4.png' },
+      { phase: 'Input',     label: 'Copy the video link from YouTube', img: 'images/submagic5.png' },
+      { phase: 'Input',     label: 'Paste the link and adjust the settings', img: 'images/submagic6.png' },
+      { phase: 'Execution', label: 'Wait while Submagic processes the video', img: 'images/submagic7.png' },
+      { phase: 'Validate',  label: 'Pick your favourite clips — ready for TikTok or Reels', img: 'images/submagic8.png' },
+      { phase: 'Plans',     label: 'Submagic plans', img: 'images/submagicplans.png' },
+    ]
+  },
+  {
+    id: 'reccloud',
+    name: 'RecCloud.com',
+    url: 'reccloud.com',
+    tagline: 'Summarize any YouTube video',
+    category: 'research',
+    audience: ['general', 'tech', 'creative'],
+    emoji: '📝',
+    accent: '#ea580c',
+    accentLight: '#ffedd5',
+    desc: 'Paste a YouTube link and get a clear summary in seconds. No need to watch a 1-hour video — just get the key points and a full transcript.',
+    impact: 'Saves the whole team time when reviewing training videos, conference talks, or competitor content — get the gist in 30 seconds instead of an hour.',
+    highlights: ['Summarizes any YouTube video', 'Full transcript included', 'Pulls out the key takeaways'],
+    dos: ['Quickly scan industry conference talks', 'Use for training video review and note-taking', 'Share summaries as meeting prep material'],
+    donts: ['Share AI summaries as official company documents', 'Use on private or unlisted videos you don\'t have permission to summarize', 'Treat transcript as 100% accurate for legal or compliance use'],
+    freeTier: { type: 'full', label: 'Free tier available', note: 'Free plan with limited summaries/month' },
+    privacyNote: 'The YouTube URL you submit is sent to RecCloud servers. Only use publicly available videos, not internal company video links.',
+    steps: [
+      { phase: 'Trigger',   label: 'Sign in and click YouTube Video Summarizer', img: 'images/reccloud1.png' },
+      { phase: 'Input',     label: 'Paste the YouTube link and click Summarize', img: 'images/reccloud2.png' },
+      { phase: 'Execution', label: 'Wait a moment while it processes', img: 'images/reccloud3.png' },
+      { phase: 'Output',    label: 'Read the summary — key points are highlighted', img: 'images/reccloud4.png' },
+      { phase: 'Validate',  label: 'Scroll down to see the full transcript', img: 'images/reccloud5.png' },
+      { phase: 'Plans',     label: 'RecCloud plans', img: 'images/reccloudplans.png' },
+    ]
+  },
+  {
+    id: 'canva',
+    name: 'Canva.com',
+    url: 'canva.com',
+    tagline: 'Design anything with AI help',
+    category: 'design',
+    audience: ['general', 'creative'],
+    emoji: '🎨',
+    accent: '#7c3aed',
+    accentLight: '#ede9ff',
+    desc: 'Canva is the easiest way to create designs — logos, social posts, presentations, and more. The AI feature helps you build something great just by describing it.',
+    impact: 'Removes the design bottleneck — any team member can produce professional-looking materials without needing a designer or knowing design software.',
+    highlights: ['Describe it, AI builds it', 'Thousands of ready-made templates', 'Share and collaborate easily'],
+    dos: ['Use brand colors and fonts in your designs', 'Use templates as a starting point, then customize', 'Collaborate with the team on shared designs'],
+    donts: ['Use AI-generated images in designs without checking Canva\'s image licensing', 'Skip brand guidelines when creating external assets', 'Share designs publicly without a final review'],
+    freeTier: { type: 'full', label: 'Free tier available', note: 'Generous free plan; AI features need Pro' },
+    privacyNote: 'Canva stores your designs on their servers. Use your company\'s Canva for Teams account for assets related to client work.',
+    steps: [
+      { phase: 'Trigger',   label: 'Open Canva and tap Canva AI', img: 'images/canva1.png' },
+      { phase: 'Input',     label: 'Type what you want to create', img: 'images/canva2.png' },
+      { phase: 'Input',     label: 'Answer a few quick questions to get better results', img: 'images/canva3.png' },
+      { phase: 'Input',     label: 'Keep going — the more you answer, the better the design', img: 'images/canva4.png' },
+      { phase: 'Output',    label: 'Pick the design you like best', img: 'images/canva5.png' },
+      { phase: 'Validate',  label: 'Customise the colors, text, and layout to your taste', img: 'images/canva6.png' },
+      { phase: 'Plans',     label: 'Canva Plans', img: 'images/canvaplans.png' },
+    ]
+  },
+  {
+    id: 'elevenlabs',
+    name: 'ElevenLabs.io',
+    url: 'elevenlabs.io',
+    tagline: 'Clone your voice with AI',
+    category: 'create',
+    audience: ['creative', 'tech'],
+    emoji: '🔊',
+    accent: '#db2777',
+    accentLight: '#fce7f3',
+    desc: 'Record a short audio clip and ElevenLabs clones your voice. You can then type anything and it reads it back in your own voice — in 29 languages.',
+    impact: 'Makes voiceover production instant — localize videos into new languages or record narration without booking studio time.',
+    highlights: ['Clone your voice in minutes', 'Speaks in 29 languages', 'Sounds incredibly natural'],
+    dos: ['Only clone your own voice or voices you have explicit permission to use', 'Disclose when AI voice is used in public-facing content', 'Use for internal training narration or video voiceovers'],
+    donts: ['Clone another person\'s voice without written consent', 'Use for phone calls or impersonation', 'Publish AI voice content as a real human without disclosure'],
+    freeTier: { type: 'full', label: 'Free credits available', note: 'Free plan with 10,000 credits/month' },
+    privacyNote: 'Voice recordings are uploaded to ElevenLabs servers. Only record and upload your own voice. Review ElevenLabs\' voice cloning policy before use.',
+    steps: [
+      { phase: 'Trigger',   label: 'Create an account and click Clone your own voice', img: 'images/elevenlabs1.png' },
+      { phase: 'Input',     label: 'Choose Instant voice clone', img: 'images/elevenlabs2.png' },
+      { phase: 'Input',     label: 'Record a short audio sample of your voice', img: 'images/elevenlabs3.png' },
+      { phase: 'Execution', label: 'Click Next when you\'re done recording', img: 'images/elevenlabs4.png' },
+      { phase: 'Output',    label: 'Save your voice clone — it\'s ready to use', img: 'images/elevenlabs5.png' },
+      { phase: 'Plans',     label: 'ElevenLabs Plans', img: 'images/elevenlabsplans.png' },
+    ]
+  },
+  {
+    id: 'openclaw',
+    name: 'OpenClaw',
+    url: 'openclawengine.xyz',
+    tagline: 'Build your own AI bot',
+    ytEmbed: 'https://www.youtube.com/embed/4GMH97CiqZ4?si=JQp2QC62iYBWouLI',
+    category: 'deploy',
+    audience: ['tech'],
+    emoji: '⚙️',
+    accent: '#475569',
+    accentLight: '#e2e8f0',
+    desc: 'OpenClaw lets you set up and run your own AI-powered bot — like a personal assistant on Telegram that you can program to do tasks for you automatically.',
+    impact: 'Enables internal automation without expensive SaaS subscriptions — run your own AI workflows privately on your own server.',
+    highlights: ['Run your own AI workflows', 'Connects to Telegram', 'Automates repetitive tasks'],
+    dos: ['Self-host on a company-controlled server', 'Use for internal automations with non-sensitive data', 'Keep API keys and bot tokens secure'],
+    donts: ['Expose the bot publicly without authentication', 'Connect it to sensitive internal databases without a security review', 'Share API keys in code repositories'],
+    freeTier: { type: 'full', label: 'Free &amp; open source', note: 'Fully free to self-host' },
+    privacyNote: 'Because OpenClaw is self-hosted, data stays on your server. However, it connects to external AI APIs — ensure those API calls comply with your data policies.',
+    steps: [
+      { phase: 'Trigger',   label: 'Visit OpenClaw and copy the install command', img: 'images/openclaw1.png' },
+      { phase: 'Input',     label: 'Open your terminal and paste the command', img: 'images/openclaw2.png' },
+      { phase: 'Execution', label: 'Wait for everything to finish installing', img: 'images/openclaw3.png' },
+      { phase: 'Execution', label: 'Open the OpenClaw onboarding setup', img: 'images/openclaw4.png' },
+      { phase: 'Execution', label: 'Step 1 of configuration', img: 'images/openclaw5.png' },
+      { phase: 'Execution', label: 'Step 2 of configuration', img: 'images/openclaw6.png' },
+      { phase: 'Execution', label: 'Step 3 of configuration', img: 'images/openclaw7.png' },
+      { phase: 'Execution', label: 'Step 4 of configuration', img: 'images/openclaw8.png' },
+      { phase: 'Execution', label: 'Step 5 of configuration', img: 'images/openclaw9.png' },
+      { phase: 'Input',     label: 'Open Telegram and search for BotFather', img: 'images/openclaw10.png' },
+      { phase: 'Input',     label: 'Follow the instructions to create your bot', img: 'images/openclaw11.png' },
+      { phase: 'Input',     label: 'Get your bot\'s configuration code', img: 'images/openclaw12.png' },
+      { phase: 'Input',     label: 'Paste the code into a new terminal window', img: 'images/openclaw13.png' },
+      { phase: 'Output',    label: 'Your bot is now live and ready', img: 'images/openclaw14.png' },
+      { phase: 'Validate',  label: 'Give it a task to try it out', img: 'images/openclaw15.png' },
+    ]
+  },
+];
+
+const AUDIENCE_MAP = {
+  general: 'General Staff',
+  creative: 'Marketing & Creative',
+  tech: 'Dev & IT',
+};
+
+function freeBadgeHTML(freeTier) {
+  if (!freeTier) return '';
+  return `<span class="free-badge ${freeTier.type}" title="${freeTier.note}">${freeTier.label}</span>`;
+}
+
+function audienceTagHTML(audiences) {
+  if (!audiences || audiences.length === 0) return '';
+  const label = audiences.map(a => AUDIENCE_MAP[a] || a).join(' · ');
+  return `<div class="card-audience-tag">👥 ${label}</div>`;
+}
+
+let currentAudience = 'all';
+let currentFilter = 'all';
+
+function renderGrid(filter = 'all', audience = 'all') {
+  const grid = document.getElementById('tools-grid');
+  let allTools = filter === 'all' ? TOOLS : TOOLS.filter(t => t.category === filter);
+
+  // When audience is selected, only show matching tools
+  const visibleTools = audience === 'all'
+    ? allTools
+    : allTools.filter(t => t.audience && t.audience.includes(audience));
+
+  const audienceLabel = document.getElementById('audience-context-label');
+  if (audienceLabel) {
+    if (audience === 'all') {
+      audienceLabel.textContent = 'Showing all 11 tools — use the filters above to see what\'s most relevant to your role.';
+    } else {
+      const name = { general: 'General Staff', creative: 'Marketing & Creative', tech: 'Dev & IT' }[audience] || audience;
+      audienceLabel.textContent = `Showing ${visibleTools.length} tool${visibleTools.length !== 1 ? 's' : ''} recommended for ${name}.`;
+    }
+  }
+
+  if (visibleTools.length === 0) {
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted);font-size:15px;opacity:0.6;">No tools match this combination. Try a different filter.</div>`;
+    return;
+  }
+
+  grid.innerHTML = visibleTools.map((t, i) => {
+    return `
+    <div class="tool-card" style="
+      --card-accent: ${t.accent};
+      --card-icon-bg: ${t.accentLight};
+      animation-delay: ${i * 0.05}s;
+    " onclick="openDetail('${t.id}')">
+      <span class="card-number">${String(i+1).padStart(2,'0')} · ${t.category}</span>
+      ${audienceTagHTML(t.audience)}
+      <div class="card-icon">${t.emoji}</div>
+      <div class="card-title">${t.name}</div>
+      <div class="card-tagline">${t.tagline}</div>
+      <div class="card-free-row">
+        ${freeBadgeHTML(t.freeTier)}
+      </div>
+      <div class="card-desc">${t.desc}</div>
+      <div class="card-impact">
+        <span class="card-impact-icon">📈</span>
+        <div><strong>Why it matters</strong>${t.impact}</div>
+      </div>
+      <div class="card-tags">
+        ${t.highlights.map(h => `<span class="card-tag">${h}</span>`).join('')}
+      </div>
+      <button class="card-btn">See how it works →</button>
+    </div>
+  `}).join('');
+}
+
+// ─── HISTORY API ─────────────────────────────────────────────────────────────
+
+function openDetail(id, pushState = true) {
+  const t = TOOLS.find(x => x.id === id);
+  if (!t) return;
+
+  if (pushState) {
+    try { history.pushState({ page: 'detail', id: id }, t.name + ' — AIBoost', '#tool=' + id); } catch(e) {}
+  }
+
+  const dp = document.getElementById('detail-page');
+  dp.style.setProperty('--detail-accent', t.accent);
+  dp.style.setProperty('--detail-accent-light', t.accentLight);
+  document.getElementById('detail-nav-name').innerHTML = 'AI<em>Boost</em>';
+  document.getElementById('detail-nav-tag').textContent = 'Step-by-step guide';
+
+  document.getElementById('detail-hero-content').innerHTML = `
+    <div class="detail-badge">${t.emoji} ${t.name}</div>
+    <div class="detail-title">${t.tagline}</div>
+    <div class="detail-tagline">${t.url}</div>
+    <div class="detail-desc">${t.desc}</div>
+    <div class="detail-free-row">
+      ${freeBadgeHTML(t.freeTier)}
+      ${t.freeTier ? `<span class="detail-free-label">${t.freeTier.note}</span>` : ''}
+    </div>
+    <div class="detail-impact-box">
+      <span class="detail-impact-icon">📈</span>
+      <div>
+        <div class="detail-impact-label">Why this tool matters</div>
+        <div class="detail-impact-text">${t.impact}</div>
+      </div>
+    </div>
+    <div class="detail-privacy-note">
+      <span class="priv-icon">🔒</span>
+      <div><strong>Data &amp; Privacy:</strong> ${t.privacyNote}</div>
+    </div>
+    <div class="detail-highlights">
+      ${t.highlights.map(h => `<span class="highlight-chip">${h}</span>`).join('')}
+    </div>
+  `;
+
+  const limitsHtml = t.dos && t.donts ? `
+    <div class="limitations-section">
+      <div class="section-header">
+        <span class="section-label">Best practices &amp; limitations</span>
+        <div class="section-line"></div>
+      </div>
+      <div class="limitations-grid">
+        <div class="limit-card do">
+          <div class="limit-card-label">✅ Do</div>
+          <ul>${t.dos.map(d => `<li>${d}</li>`).join('')}</ul>
+        </div>
+        <div class="limit-card dont">
+          <div class="limit-card-label">🚫 Don't</div>
+          <ul>${t.donts.map(d => `<li>${d}</li>`).join('')}</ul>
+        </div>
+      </div>
+    </div>
+  ` : '';
+
+  const missingCount = t.steps.filter(s => !s.img || s.img === '').length;
+  const placeholderBanner = missingCount > 0 ? `
+    <div class="placeholder-reminder">
+      <span class="placeholder-reminder-icon">📸</span>
+      <div>
+        <strong>Intern action required</strong>
+        ${missingCount} of ${t.steps.length} steps are still missing screenshots or GIFs. Replace the grey placeholders below with cropped product screenshots or short looping GIFs showing the exact input → output moment. Files go in the <code>images/</code> folder next to this HTML file.
+      </div>
+    </div>
+  ` : '';
+
+  const stepsHtml = `
+    <div class="section-header">
+      <span class="section-label">How to use it — step by step</span>
+      <div class="section-line"></div>
+    </div>
+    ${placeholderBanner}
+    <div class="screenshot-grid cols-3">
+      ${t.ytEmbed ? `
+      <div class="screenshot-thumb yt-grid-tile" data-video-placeholder="true" data-tool-id="${t.id}">
+        <div class="yt-grid-embed-wrap">
+          <iframe
+            src="${t.ytEmbed}"
+            title="${t.name} — Tutorial"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="thumb-label">
+          <span class="step-phase-badge" style="background:#ff0000;">▶ YouTube</span>
+          <strong style="display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--detail-accent,var(--tomato));margin-bottom:3px;font-weight:600;margin-top:4px;">Full Walkthrough</strong>Watch the full tutorial before following the steps
+        </div>
+      </div>
+      ` : `
+      <div class="screenshot-thumb video-grid-tile" onclick="openVideoModal(this)" data-video-placeholder="true" data-tool-id="${t.id}">
+        <div class="video-grid-poster-wrap">
+          <video
+            class="video-poster-frame"
+            src="${VIDEO_URLS[t.id] || ''}"
+            preload="metadata"
+            muted
+            style="width:100%;height:100%;display:block;object-fit:cover;pointer-events:none;"
+          ></video>
+          <div class="video-poster-overlay">
+            <div class="video-poster-play-btn">&#9654;</div>
+          </div>
+        </div>
+        <div class="thumb-label">
+          <span class="step-phase-badge">Video</span>
+          <strong style="display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--detail-accent,var(--tomato));margin-bottom:3px;font-weight:600;margin-top:4px;">Full Walkthrough</strong>Short demo of the tool from start to finish
+        </div>
+      </div>
+      `}
+      ${t.steps.map((s, idx) => {
+        const phase = s.phase || `Step ${idx + 1}`;
+        return `
+        <div class="screenshot-thumb" onclick="openModal(this)" data-label="${s.label}" data-img="${s.img}" data-phase="${phase}">
+          <div class="thumb-placeholder no-img" id="ph-${t.id}-${idx}">
+            <span class="thumb-placeholder-icon"></span>
+            <span class="thumb-placeholder-hint">Add screenshot or GIF</span>
+          </div>
+          <div class="thumb-label">
+            <span class="step-phase-badge">${phase}</span>
+            <strong style="display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--detail-accent,var(--tomato));margin-bottom:3px;font-weight:600;margin-top:4px;">Step ${idx+1}</strong>${s.label}
+          </div>
+        </div>
+      `}).join('')}
+    </div>
+  `;
+
+  document.getElementById('detail-steps').innerHTML = limitsHtml + stepsHtml;
+
+  // Seek each video poster to 0.5s so it shows a real frame instead of black
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.video-poster-frame').forEach(v => {
+      v.addEventListener('loadedmetadata', () => { v.currentTime = 0.5; }, { once: true });
+    });
+  });
+
+  t.steps.forEach((s, idx) => {
+    const ph = document.getElementById(`ph-${t.id}-${idx}`);
+    if (!ph) return;
+    const img = new Image();
+    img.onload = () => {
+      ph.classList.remove('no-img');
+      ph.innerHTML = '';
+      img.className = 'thumb-img';
+      img.alt = `Step ${idx + 1}`;
+      ph.appendChild(img);
+    };
+    img.src = s.img;
+  });
+
+  document.getElementById('main-page').classList.remove('active');
+  dp.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+function goBack() {
+  showMain();
+  try { history.pushState({ page: 'main' }, '', window.location.pathname + window.location.search); } catch(e) {}
+}
+
+function showMain() {
+  closeModal();
+  document.getElementById('detail-page').classList.remove('active');
+  document.getElementById('main-page').classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+window.addEventListener('popstate', function(e) {
+  if (e.state && e.state.page === 'detail') {
+    openDetail(e.state.id, false);
+  } else {
+    showMain();
+  }
+});
+
+// ─── VIDEO PLACEHOLDER CLICK ─────────────────────────────────────────────────
+function openVideoModal(el) {
+  const toolId = el.getAttribute('data-tool-id');
+  const t = TOOLS.find(x => x.id === toolId);
+  if (!t) return;
+  const wrap = document.getElementById('modal-img-wrap');
+
+  wrap.style.minHeight = '';
+  wrap.style.background = '#000';
+  wrap.style.display = 'block';
+
+  wrap.innerHTML = `
+    <video
+      id="demo-video-player"
+      src="${VIDEO_URLS[toolId] || ''}"
+      controls
+      autoplay
+      style="width:100%;display:block;border-radius:8px;max-height:70vh;"
+    ></video>`;
+
+  const vid = document.getElementById('demo-video-player');
+  vid.onerror = () => {
+    wrap.style.minHeight = '300px';
+    wrap.style.display = 'flex';
+    wrap.style.background = 'var(--ink)';
+    wrap.innerHTML = `
+      <div style="text-align:center;padding:48px 24px;color:rgba(255,255,255,0.5);">
+        <div style="font-size:40px;margin-bottom:16px;opacity:0.3;">▶</div>
+        <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:8px;">${t.name} — Demo Video</div>
+        <div style="font-size:12px;margin-bottom:20px;">No video found. Add your file at:</div>
+        <code style="font-size:12px;background:rgba(255,255,255,0.08);padding:6px 14px;border-radius:6px;">${VIDEO_URLS[toolId]}</code>
+      </div>`;
+  };
+
+  document.getElementById('modal-label').textContent = t.name + ' — Full Demo';
+  document.getElementById('modal-sublabel').textContent = 'Video · Walkthrough';
+  document.getElementById('modal-counter').textContent = '▶ Video';
+  document.getElementById('modal-prev').disabled = true;
+  document.getElementById('modal-next').disabled = true;
+  document.getElementById('modal').classList.add('open');
+}
+
+// Stop video playback when modal closes
+const _origCloseModal = closeModal;
+closeModal = function() {
+  const vid = document.getElementById('demo-video-player');
+  if (vid) { vid.pause(); vid.src = ''; }
+  _origCloseModal();
+};
+
+// ─── SCREENSHOT MODAL ────────────────────────────────────────────────────────
+
+let modalThumbs = [];
+let modalIndex  = 0;
+
+function loadModalAt(index) {
+  const el     = modalThumbs[index];
+  const label  = el.getAttribute('data-label');
+  const imgSrc = el.getAttribute('data-img');
+  const wrap   = document.getElementById('modal-img-wrap');
+  const existing = el.querySelector('.thumb-img');
+  const total  = modalThumbs.length;
+
+  if (existing && existing.complete && existing.naturalWidth > 0) {
+    wrap.innerHTML = `<img src="${existing.src}" alt="${label}">`;
+  } else if (imgSrc) {
+    wrap.innerHTML = `<div class="modal-img-placeholder">Loading…</div>`;
+    const test = new Image();
+    test.onload  = () => { wrap.innerHTML = `<img src="${imgSrc}" alt="${label}">`; };
+    test.onerror = () => { wrap.innerHTML = `<div class="modal-img-placeholder">No image yet<br><small style="opacity:0.3">${imgSrc}</small></div>`; };
+    test.src = imgSrc;
+  } else {
+    wrap.innerHTML = `<div class="modal-img-placeholder">No image uploaded yet</div>`;
+  }
+
+  const strong = el.querySelector('.thumb-label strong');
+  const phase  = el.getAttribute('data-phase') || '';
+  document.getElementById('modal-label').textContent   = label;
+  document.getElementById('modal-sublabel').textContent = phase ? `${phase} · ${strong ? strong.textContent : ''}` : (strong ? strong.textContent : '');
+  document.getElementById('modal-counter').textContent  = `${index + 1} / ${total}`;
+  document.getElementById('modal-prev').disabled = index === 0;
+  document.getElementById('modal-next').disabled = index === total - 1;
+}
+
+function openModal(el) {
+  // Only open screenshot modal for non-video thumbs
+  if (el.getAttribute('data-video-placeholder')) return;
+  // Reset wrap in case it was last used for a video
+  const wrap = document.getElementById('modal-img-wrap');
+  wrap.style.minHeight = '500px';
+  wrap.style.background = 'var(--surface2)';
+  wrap.style.display = 'flex';
+  modalThumbs = Array.from(document.querySelectorAll('#detail-steps .screenshot-thumb:not([data-video-placeholder])'));
+  modalIndex  = modalThumbs.indexOf(el);
+  if (modalIndex === -1) modalIndex = 0;
+  loadModalAt(modalIndex);
+  document.getElementById('modal').classList.add('open');
+}
+
+function modalNav(dir) {
+  const next = modalIndex + dir;
+  if (next < 0 || next >= modalThumbs.length) return;
+  modalIndex = next;
+  loadModalAt(modalIndex);
+}
+
+function closeModal() { document.getElementById('modal').classList.remove('open'); }
+function closeModalOutside(e) { if (e.target === document.getElementById('modal')) closeModal(); }
+
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('modal').classList.contains('open')) return;
+  if (e.key === 'Escape')     closeModal();
+  if (e.key === 'ArrowLeft')  modalNav(-1);
+  if (e.key === 'ArrowRight') modalNav(1);
+});
+
+// ─── SCROLL UP BUTTON ────────────────────────────────────────────────────────
+
+window.addEventListener('scroll', () => {
+  document.getElementById('scroll-up-btn').classList.toggle('visible', window.scrollY > 300);
+});
+
+function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+// ─── AUDIENCE FILTER ─────────────────────────────────────────────────────────
+
+document.querySelectorAll('.audience-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.audience-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentAudience = btn.dataset.audience;
+    renderGrid(currentFilter, currentAudience);
+  });
+});
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+(function init() {
+  const hash = window.location.hash;
+  if (hash && hash.startsWith('#tool=')) {
+    const id = hash.slice(6);
+    const t = TOOLS.find(x => x.id === id);
+    if (t) {
+      try { history.replaceState({ page: 'detail', id: id }, t.name + ' — AIBoost', hash); } catch(e) {}
+      renderGrid();
+      openDetail(id, false);
+      return;
+    }
+  }
+  try { history.replaceState({ page: 'main' }, 'AIBoost', window.location.pathname + window.location.search); } catch(e) {}
+  renderGrid();
+})();
+</script>
+</body>
+</html>
