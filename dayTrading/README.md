@@ -1,2 +1,2 @@
-https://domtzy.github.io/research_and-development/dayTrading/
+https://domtzy.github.io/research-and-development/dayTrading/
 
