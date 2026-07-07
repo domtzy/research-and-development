@@ -4,7 +4,7 @@ Web-based research projects completed during my internship at Information Manage
 ## Projects
 
 ### 1. Day Trading Guide
-Research on Philippine Stock Exchange (PSE) trading strategies, technical analysis, and a built-in stock screener.
+Research on Daytrading strategies, technical analysis, and a built-in stock screener.
 [View Live](https://domtzy.github.io/research-and-development/dayTrading/)
 
 ### 2. Meme Coin Launch Guide
