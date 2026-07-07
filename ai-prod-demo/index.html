@@ -777,19 +777,9 @@
   .tool-card:nth-child(10) { animation-delay: 0.40s; }
   .tool-card:nth-child(11) { animation-delay: 0.44s; }
 
-  /* Dimmed state for non-matching audience cards */
+  /* Hidden state for non-matching audience cards */
   .tool-card.card-dimmed {
-    opacity: 0.32;
-    filter: grayscale(40%);
-    box-shadow: 2px 2px 0 rgba(0,0,0,0.08);
-    transform: none !important;
-    pointer-events: auto;
-  }
-  .tool-card.card-dimmed:hover {
-    opacity: 0.55;
-    filter: grayscale(20%);
-    box-shadow: 4px 4px 0 rgba(0,0,0,0.12);
-    transform: translate(-1px,-1px) !important;
+    display: none;
   }
 
   /* Audience context label row */
@@ -1267,31 +1257,28 @@ let currentFilter = 'all';
 
 function renderGrid(filter = 'all', audience = 'all') {
   const grid = document.getElementById('tools-grid');
-  let allTools = filter === 'all' ? TOOLS : TOOLS.filter(t => t.category === filter);
+  const allTools = filter === 'all' ? TOOLS : TOOLS.filter(t => t.category === filter);
 
-  // When audience is selected, only show matching tools
-  const visibleTools = audience === 'all'
-    ? allTools
-    : allTools.filter(t => t.audience && t.audience.includes(audience));
+  if (allTools.length === 0) {
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted);font-size:15px;opacity:0.6;">No tools match this combination. Try a different filter.</div>`;
+    return;
+  }
 
   const audienceLabel = document.getElementById('audience-context-label');
   if (audienceLabel) {
     if (audience === 'all') {
       audienceLabel.textContent = 'Showing all 11 tools — use the filters above to see what\'s most relevant to your role.';
     } else {
+      const matched = allTools.filter(t => t.audience && t.audience.includes(audience));
       const name = { general: 'General Staff', creative: 'Marketing & Creative', tech: 'Dev & IT' }[audience] || audience;
-      audienceLabel.textContent = `Showing ${visibleTools.length} tool${visibleTools.length !== 1 ? 's' : ''} recommended for ${name}.`;
+      audienceLabel.textContent = `Showing ${matched.length} tools for ${name}.`;
     }
   }
 
-  if (visibleTools.length === 0) {
-    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted);font-size:15px;opacity:0.6;">No tools match this combination. Try a different filter.</div>`;
-    return;
-  }
-
-  grid.innerHTML = visibleTools.map((t, i) => {
+  grid.innerHTML = allTools.map((t, i) => {
+    const isDimmed = audience !== 'all' && !(t.audience && t.audience.includes(audience));
     return `
-    <div class="tool-card" style="
+    <div class="tool-card${isDimmed ? ' card-dimmed' : ''}" style="
       --card-accent: ${t.accent};
       --card-icon-bg: ${t.accentLight};
       animation-delay: ${i * 0.05}s;

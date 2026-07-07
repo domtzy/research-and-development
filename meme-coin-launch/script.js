@@ -95,7 +95,7 @@
     if (e.key === 'Escape')     closeModal();
   });
 
-  // BACK TO TOP
+// BACK TO TOP
 const backToTop = document.getElementById('backToTop');
 
 window.addEventListener('scroll', function() {
